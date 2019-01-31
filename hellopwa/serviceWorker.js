@@ -1,7 +1,7 @@
 var CACHE_NAME  = "mycache";
 var urlsToCache = [
-    "https://github.com/naoya-ma/mockups/hellopwa/",
-    "https://github.com/naoya-ma/mockups/hellopwa/index.html"
+    "https://naoya-ma.github.io/mockups/hellopwa/",
+    "https://naoya-ma.github.io/mockups/hellopwa/index.html"
 ];
 
 self.addEventListener('install', function(event) {
