@@ -17,6 +17,16 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener('activate', function(e) {
   console.log('[ServiceWorker] Activate');
+  event.waitUntil(
+    caches.keys()
+      .then(function(keyList) {
+        return Promise.all(keyList.map(function(key) {
+          console.log('[ServiceWorker] Removing old cache...');
+          return caches.delete(key);
+        }));
+      })
+  );
+  return self.clients.claim();
 });
 
 self.addEventListener('fetch', function(event) {
